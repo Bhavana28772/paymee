@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle, #0b0b1a, #000);
+  color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Center screens */
+#startScreen,
+#messageScreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Buttons */
+button {
+  padding: 14px 34px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: gold;
+  background:levender;
+  color: black;
+  cursor: pointer;
+}
+
+/* Typing lines */
+#line {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+/* Birthday text lightning effect in lavender */
+#birthdayText {
+  margin-top: 40px;
+  font-size: 52px;
+  color: #e6e6fa; /* base lavender color */
+  text-shadow:
+    0 0 8px #e6e6fa,
+    0 0 16px #d8b7ff,
+    0 0 24px #c49fff;
+  animation: birthdayLavender 1.2s infinite alternate;
+  opacity: 0; /* fade in via JS */
+}
+
+@keyframes birthdayLavender {
+  0% {
+    color: #e6e6fa;
+    text-shadow: 0 0 8px #e6e6fa,
+                 0 0 16px #d8b7ff,
+                 0 0 24px #c49fff;
+  }
+  50% {
+    color: #ffffff;
+    text-shadow: 0 0 16px #f3e6ff,
+                 0 0 32px #d8b7ff,
+                 0 0 48px #c49fff;
+  }
+  100% {
+    color: #e6e6fa;
+    text-shadow: 0 0 8px #e6e6fa,
+                 0 0 16px #d8b7ff,
+                 0 0 24px #c49fff;
+  }
+}
+/* Bottom button */
+#continueBtn {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+/* Story */
+#story {
+  padding: 120px 30px 250px;
+}
+
+.intro {
+  font-size: 22px;
+  margin-bottom: 80px;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+/* Cards */
+.card {
+  width: 100%;
+  display: flex;
+  margin: 70px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.5s ease;
+}
+
+.card.right {
+  justify-content: flex-end;
+}
+
+.card-content {
+  max-width: 320px;
+  text-align: center;
+}
+
+.card-img {
+  width: 360px;
+  height: 260px;
+  border-radius: 14px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+ .card-content{
+    margine-right:15px;
+}
+   
+
+.card-img:hover {
+  transform: scale(1.05);
+}
+
+/* Text under image */
+.card-content p {
+  font-size: 20px;
+  color: #ddd;
+  line-height: 1.6;
+}
+#thankYou {
+  width: 100%;
+  margin-top: 120px;
+  text-align: center;
+}
+
+#thankYou h1 {
+  font-size: 60px;
+  color: #e6e6fa;
+  text-shadow:
+    0 0 10px #e6e6fa,
+    0 0 25px #d8b7ff,
+    0 0 45px #c49fff;
+  animation: fadeScale 2s ease forwards;
+}
+
+@keyframes fadeScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Utility */
+.hidden {
+  display: none;
+  color:
+}
+#subText {
+  margin-top: 15px;
+  font-size: 22px;
+  color: #e6e6fa;
+  text-shadow: 0 0 5px #e6e6fa;
+  animation: subTextLavender 1.5s infinite alternate;
+  opacity: 0;
+}
+
+@keyframes subTextLavender {
+  0%, 100% { color: #e6e6fa; text-shadow: 0 0 5px #e6e6fa; }
+  50% { color: #ffffff; text-shadow: 0 0 15px #f3e6ff, 0 0 25px #d8b7ff; }
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+/* Lightning text effect */
+.lightning {
+  color: #ffffff;
+  text-shadow:
+    0 0 5px #8ec5ff,
+    0 0 10px #5fa8ff,
+    0 0 20px #3f8cff,
+    0 0 40px #1f6fff;
+  animation: lightningFlicker 1.5s infinite;
+}
+
+@keyframes lightningFlicker {
+  0%   { opacity: 1; }
+  10%  { opacity: 0.6; }
+  20%  { opacity: 1; }
+  30%  { opacity: 0.7; }
+  40%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+/* Lightning effect for story card text */
+.card p.lightning {
+  color: #eaf4ff; /* soft electric white-blue */
+  text-shadow:
+    0 0 8px #6fbaff,
+    0 0 16px #4fa3ff,
+    0 0 32px #2f8cff,
+    0 0 48px #1f6fff;
+  animation: lightningFlash 1.2s infinite;
+}
+
+@keyframes lightningFlash {
+  0%   { text-shadow: 0 0 6px #6fbaff; }
+  15%  { text-shadow: 0 0 40px #9fd3ff; }
+  30%  { text-shadow: 0 0 10px #6fbaff; }
+  45%  { text-shadow: 0 0 50px #cfe9ff; }
+  60%  { text-shadow: 0 0 12px #6fbaff; }
+  100% { text-shadow: 0 0 8px #6fbaff; }
+}
+#blossoms {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.blossom {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: pink;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+#birthdayText {
+  font-size: 52px;
+  color: lavender;
+  text-shadow:
+    0 0 8px lavender,
+    0 0 16px thistle,
+    0 0 24px plum;
+}
+
+/* Sub text */
+#subText {
+  font-size: 22px;
+  margin-top: 15px;
+  color: thistle;
+  text-shadow: 0 0 6px lavender;
+}
+
+/* Button */
+#continueBtn {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 34px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  background: hotpink;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,105,180,0.6);
+}
