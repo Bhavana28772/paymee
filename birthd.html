@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="blossoms"></div>
+
+<!-- Start -->
+<div id="startScreen">
+  <button id="startBtn">No need to pay,
+                         just click</button>
+</div>
+<div id="messageScreen" class="hidden">
+  <div id="lines"></div>
+  <h1 id="birthdayText" class="hidden">Happy Birthday!</h1>
+  <p id="subText" class="hidden">Good to connect with you again.</p>
+</div>
+
+
+
+<!-- Bottom button -->
+<button id="continueBtn" class="hidden">Continue</button>
+
+
+<!-- Story Section -->
+<div id="story" class="hidden">
+  <p class="intro">
+    We connected back — it is too short, but in that short time…
+  </p>
+
+
+  <div class="card left">
+    <div class="card-content">
+      <img src="2.jpg" alt="Friend 1" class="card-img">
+       
+      <p>We talked and shared things a lot, like nothing had changed</p>
+    </div>
+  </div>
+
+  <div class="card right">
+    <div class="card-content">
+      <img src="3.jpg" alt="Friend 1" class="card-img">
+      <p>Sometimes we argued, but it never lasted long.</p>
+    </div>
+  </div>
+
+  <div class="card left">
+    <div class="card-content">
+      <img src="1.jpg" alt="Friend 1" class="card-img">
+      <p> Also you made me laugh.</p>
+    </div>
+  </div>
+</div>
+<div id="thankYou" class="hidden">
+  <h1>Thank You 😊</h1>
+</div>
+<audio id="imageMusic" src="birthday-music.mp3" preload="auto"></audio>
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
